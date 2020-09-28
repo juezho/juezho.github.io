@@ -19,11 +19,15 @@ $.ajax({
     url: '//cdn.jsdelivr.net/gh/juezho/cdn/live2d/waifu-tips.min.js',
     dataType: "script",
     cache: true,
-    async: false
+    async: false,
+    success: function(){
+        live2d_try();
+    }
+    
 });
 
 
-!function live2d_try() {
+function live2d_try() {
     // 初始化看板娘，加载 waifu-tips.json
     try {
         live2d_settings && loadlive2d;
@@ -47,4 +51,4 @@ $.ajax({
             live2d_try()
         }, 5000)
     }
-}()
+}
